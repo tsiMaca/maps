@@ -1,0 +1,2 @@
+# Ignorar archivos relacionados con claves de una API
+.config.js
