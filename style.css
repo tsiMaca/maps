@@ -16,24 +16,9 @@
     background:white;
     width: 30%;
   }
-  
-  #sidebar.collapsed {
-    width: 0;
-  }
-  
-  #sidebar.collapsed + #content {
-    width: 100%;
-  }
-  
   #content {
     background:gray;
     width: 70%;
-  }
-  
-  button {
-    width: 60px;
-    height: 50px;
-    background: rgb(230, 142, 142);
   }
  #map {
     height: 100%;
