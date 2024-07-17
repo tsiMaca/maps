@@ -12,16 +12,26 @@
     transition: width .35s;
   }
   
+  #map {
+     height: 100%;
+     width: 100%;
+   }
+
   #sidebar {
     background:white;
     width: 30%;
   }
+
+.plazas__list{
+  color: brown;
+  
+}
+
+.plazas__list > h3{
+  text-align: center;
+}
   #content {
     background:gray;
     width: 70%;
-  }
- #map {
-    height: 100%;
-    width: 100%;
   }
   
