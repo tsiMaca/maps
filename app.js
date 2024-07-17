@@ -17,9 +17,6 @@ const initMap = async () => {
 
   const sidebar = document.getElementById("sidebar");
 
-
-
-
   const markers = [
     new AdvancedMarkerElement({ map, position: myLatlng, title: "Click to zoom" }),
     new AdvancedMarkerElement({ map, position: myLatlng2, title: "Click to zoom" }),
