@@ -1,37 +1,57 @@
-
-  html,
-  body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
-  #sidebar, #content {
-    height: 100%;
-    overflow:auto;
-    float:left;
-    transition: width .35s;
-  }
-  
-  #map {
-     height: 100%;
-     width: 100%;
-   }
-
-  #sidebar {
-    background:white;
-    width: 30%;
-  }
-
-.plazas__list{
-  color: green;
-  
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-.plazas__list > h3{
+#sidebar,
+#content {
+  height: 100%;
+  overflow: auto;
+  float: left;
+  transition: width 0.35s;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+#sidebar {
+  width: 20%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #11101d;
+  z-index: 100;
+  transition: all 0.5s ease;
+}
+
+.plazas__list .plaza__individualNames {
+  font-size: 18px;
+  font-weight: 200;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.plazas__list .plaza__individualNames:hover {
+  color: lightgreen;
+}
+
+.plazas__list > h3 {
+  font-size: 30px;
+  color: #fff;
+  height: 50px;
+  min-width: 30x;
   text-align: center;
+  line-height: 30px;
 }
-  #content {
-    background:gray;
-    width: 70%;
-  }
-  
+
+#content {
+  background: gray;
+  width: 80%;
+}
