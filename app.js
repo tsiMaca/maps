@@ -1,18 +1,35 @@
 let map;
 let markers = [];
 
-const displayPlazasList = () =>{
-    let plazaHtml ="";
-    plazas.forEach(plaza =>{
-        plazaHtml += `<h4> ${plaza.name}</h4>`
+const setListener = () =>{
+  document.querySelectorAll(".plaza__individualNames").forEach((plazaName, index)=>{
+    plazaName.addEventListener("click", ()=>{
+      google.maps.event.trigger(markers[index], "click")
     })
-    document.getElementById("plazas__names").innerHTML = plazaHtml
+  })
 }
+
+const displayPlazasList = () => {
+  let plazaHtml = "";
+  plazas.forEach((plaza) => {
+    plazaHtml += `<h4 class="plaza__individualNames"> ${plaza.name}</h4>`;
+  });
+  document.getElementById("plazas__names").innerHTML = plazaHtml;
+};
 
 const sidebar = document.getElementById("sidebar");
 
 const createMarker = (coord, name) => {
-  const marker = new google.maps.marker.AdvancedMarkerElement({ map, position: coord });
+  let html = `<h3>${name}</h3>`;
+  const marker = new google.maps.marker.AdvancedMarkerElement({
+    map,
+    position: coord,
+  });
+
+  google.maps.event.addListener(marker, "click", () => {
+    infoWindow.setContent(html);
+    infoWindow.open(map, marker);
+  });
   markers.push(marker);
 };
 
@@ -25,7 +42,7 @@ const createLocationMarkers = () => {
 };
 
 const initMap = async () => {
-  const myLatlng = { lat: -27.450752356733336, lng: -58.98624635360478 };
+  const myLatlng = { lat: -27.45120820580578, lng: -58.98650858468591 };
 
   const { Map } = await google.maps.importLibrary("maps");
   await google.maps.importLibrary("marker");
@@ -37,8 +54,12 @@ const initMap = async () => {
   });
 
   createLocationMarkers();
-  displayPlazasList()
+
+  infoWindow = new google.maps.InfoWindow();
+  let html = `<h3>Centro de la ciudad</h3>`;
+
+  displayPlazasList();
+  setListener();
 };
 
 initMap();
-
