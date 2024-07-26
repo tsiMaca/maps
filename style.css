@@ -1,20 +1,15 @@
 html,
 body {
   height: 100%;
-  margin: 0;
-  padding: 0;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  background-color: #123456;
+  overflow: hidden;
 }
-
-#sidebar,
-#content {
-  height: 100%;
-  overflow: auto;
-  float: left;
-  transition: width 0.35s;
+#container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh; 
+  overflow: hidden; 
 }
 
 #map {
@@ -22,34 +17,45 @@ body {
   width: 100%;
 }
 
-#sidebar {
+#markers-sidebar {
+  padding-left: 40px;
   width: 20%;
-  top: 0;
-  left: 0;
-  height: 100%;
-  background: #11101d;
-  z-index: 100;
-  transition: all 0.5s ease;
+}
+#polygons-sidebar {
+  padding-left: 40px;
+  width: 15%;
+  background-color: #1b5583;
 }
 
+
 .plazas__list .plaza__individualNames {
-  font-size: 18px;
-  font-weight: 200;
+  font-size: 16px;
+  font-weight: 200px;
   color: #fff;
   transition: all 0.4s ease;
 }
 .plazas__list .plaza__individualNames:hover {
   color: lightgreen;
 }
+.plaza__individualNames {
+  display: none;
+}
 
-.plazas__list > h3 {
-  font-size: 30px;
+.plaza__individualNames.visible {
+  display: block;
+}
+.plaza__individualNames.marked {
+  color: darkgreen;
+  font-weight: bold; 
+}
+
+#sidebar__title {
+  padding-bottom: 20px;
+  font-size: 18px;
   color: #fff;
   height: 50px;
-  min-width: 30x;
-  text-align: center;
-  line-height: 30px;
 }
+
 
 #content {
   background: gray;
